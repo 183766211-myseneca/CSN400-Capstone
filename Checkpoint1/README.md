@@ -8,17 +8,43 @@
 
 ---
 ### Table of Contents
-_placeholder for Table of Contents, in hyperlink format to the actual header, follow the example below_
-1. [Assignment Instructions](#instructions)
-2. [Assignment Objectives](#objectives)
+1. [Image](#image)
+2. [Single line code snippet](#single-line-code-snippet)
+3. [Multi line code snippet](#multi-line-code-snippet)
+4. [Json object](#sample-json-objects)
+5. [Table](#sample-table)
+6. [Hyperlink](#sample-hyperlink)
 
-_To be completed ..._
+## Image
+A photo of mine from backpacking in New Zealand!
 
+<img src="./Images/NZLushHills.jpg"
+     alt="NZ Rolling Hills"
+     style="float: left; margin-right: 10px;" />
 
-You must then add (or if required embed) below objects into your `README.md`:
-- an image
-- single line code snippet
-- multi line code snippet (preferably bash script"
-- sample json objects
-- sample table
-- sample hyperlink
+## Single line code snippet
+To check which directly you are currently working in, simply type `pwd`.
+
+## Multi line code snippet
+```
+#!/bin/bash
+
+echo This is a simple string from a simple bash script.
+echo "It also prints the current user's name:" $USER
+```
+
+## Sample json objects
+Name in a json object
+```
+{
+"firstName":"Evan","lastName":"Scheller"
+}
+```
+
+## Sample table
+| Name | ID |
+| - | - |
+| Evan | 99 |
+
+## Sample hyperlink
+You can reach my GitHub repository here: [Evan's GitHub](https://github.com/183766211-myseneca/).
