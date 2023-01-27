@@ -92,6 +92,7 @@ nothing to commit, working tree clean
 
 3. What are the best practices in working with `release` branches?<br>
    - Branches from the `develop` branch
+   - Should use 'semantic versioning'
    - Then Merges to `develop` and `main` branches
    - Should only be created with a go-ahead from the Lead
    - The release branch should always be set to `public`
