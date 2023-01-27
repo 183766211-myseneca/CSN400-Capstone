@@ -81,6 +81,17 @@ nothing to commit, working tree clean
 ```
 
 # Part D - Git Branching Strategy Review Questions
-1. What are the differences between `develop` branch and `main` branch?
-2. What are the three supporting branches? Briefly describe the function of each of these supporting branches.
-3. What re the best practices in working with `release` branches?
+1. What are the differences between `develop` branch and `main` branch?<br>  The `develop` branch is generally the branch where working changes are merged, but are still considered in development and testing. `main` is the current stable state of code which is officially deployed.
+
+2. What are the three supporting branches? Briefly describe the function of each of these supporting branches.<br><br>
+ The three supporting branches are named `feature`, `hotfix`, and `release`.<br><br>
+ Beginning with `feature`, this branch is where development of new features begins, and therefore should always branch from the `develop` head branch and merge back into it.<br><br>
+ Next support branch is the `hotfix` branch. This is used when changes need to be made quickly to the `main` branch, and therefore bypasses the normal development process from `develop` branches.<br><br>
+ Third is the `release` branch. It is a branch used to make any very minor last minute changes, and update the version number to then merge into `main`, as well as back into `develop`.
+
+
+3. What are the best practices in working with `release` branches?<br>
+   - Branches from the `develop` branch
+   - Then Merges to `develop` and `main` branches
+   - Should only be created with a go-ahead from the Lead
+   - The release branch should always be set to `public`
