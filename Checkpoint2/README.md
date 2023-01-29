@@ -13,6 +13,11 @@
 4. [Part D - Git Branching Strategy Review Questions](#part-d---git-branching-strategy-review-questions)
 
 # Part A - Adding Files - Local Repo Workflow
+`git log` showing the commit where Checkpoint2/README.md was added, as well as the git_status_committed.txt file:
+<img src="./images/gitlogAddCheckpoint2.jpg"
+     alt="git status ss"
+     style="float: left; margin-right: 10px;" />
+
 
 # Part B - Inspecting Local Repo
 `git status` is a command used to display information about the current working state of the repository compared to the state that was pushed previously, whereas `git log` displays changes which have been committed and when.
