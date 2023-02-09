@@ -1,5 +1,9 @@
 Part C
+
+
 4. output of `az network vnet subnet show -g "Student-RG-846011" -n "SN1" --vnet-name "Server-32" --query "[type, addressPrefix, routeTable]"`
+
+
 [
   "Microsoft.Network/virtualNetworks/subnets",
   "172.17.32.32/27",
