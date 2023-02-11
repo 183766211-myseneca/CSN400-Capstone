@@ -1,0 +1,47 @@
+{
+    "properties": {
+        "notes": "Windows 10 Pro, version 21H2",
+        "ownerObjectId": "7fa535ec-2afb-4ab5-8cd3-45608614a86b",
+        "ownerUserPrincipalName": "odl_user_846011@seneca-csn400naa.cloudlabs.ai",
+        "createdByUserId": "100320026C62CBCC",
+        "createdByUser": "odl_user_846011@seneca-csn400naa.cloudlabs.ai",
+        "createdDate": "2023-02-11T17:14:58.6334364+00:00",
+        "computeId": "/subscriptions/bd627181-5ddb-4bb6-b03f-5297c3be4e1e/resourceGroups/student-rg-846011/providers/Microsoft.Compute/virtualMachines/WC-32",
+        "osType": "Windows",
+        "size": "Standard_B2s",
+        "userName": "escheller",
+        "isAuthenticationWithSshKey": false,
+        "labSubnetName": "Virtual-Desktop-Client",
+        "labVirtualNetworkId": "/subscriptions/bd627181-5ddb-4bb6-b03f-5297c3be4e1e/resourcegroups/student-rg-846011/providers/microsoft.devtestlab/labs/csn400-32/virtualnetworks/student-846011-vnet",
+        "disallowPublicIpAddress": true,
+        "artifactDeploymentStatus": {
+            "artifactsApplied": 0,
+            "totalArtifacts": 0
+        },
+        "galleryImageReference": {
+            "offer": "Windows-10",
+            "publisher": "MicrosoftWindowsDesktop",
+            "sku": "win10-21h2-pro",
+            "osType": "Windows",
+            "version": "latest"
+        },
+        "networkInterface": {},
+        "allowClaim": false,
+        "storageType": "Standard",
+        "virtualMachineCreationSource": "FromGalleryImage",
+        "lastKnownPowerState": "Running",
+        "provisioningState": "Succeeded",
+        "uniqueIdentifier": "7796bcc2-1d5c-4322-9b20-96d9d5d9e426"
+    },
+    "location": "canadacentral",
+    "tags": {
+        "DeploymentId": "846011",
+        "LaunchId": "28959",
+        "LaunchType": "ON_DEMAND_LAB",
+        "TemplateId": "4678",
+        "TenantId": "353"
+    },
+    "id": "/subscriptions/bd627181-5ddb-4bb6-b03f-5297c3be4e1e/resourcegroups/student-rg-846011/providers/microsoft.devtestlab/labs/csn400-32/virtualmachines/wc-32",
+    "name": "WC-32",
+    "type": "Microsoft.DevTestLab/labs/virtualMachines"
+}

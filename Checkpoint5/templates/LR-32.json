@@ -1,0 +1,47 @@
+{
+    "properties": {
+        "notes": "Red Hat Enterprise Linux 8.1 (LVM)\t",
+        "ownerObjectId": "7fa535ec-2afb-4ab5-8cd3-45608614a86b",
+        "ownerUserPrincipalName": "odl_user_846011@seneca-csn400naa.cloudlabs.ai",
+        "createdByUserId": "100320026C62CBCC",
+        "createdByUser": "odl_user_846011@seneca-csn400naa.cloudlabs.ai",
+        "createdDate": "2023-02-11T17:36:33.7443579+00:00",
+        "computeId": "/subscriptions/bd627181-5ddb-4bb6-b03f-5297c3be4e1e/resourceGroups/student-rg-846011/providers/Microsoft.Compute/virtualMachines/LR-32",
+        "osType": "Linux",
+        "size": "Standard_B2s",
+        "userName": "escheller",
+        "isAuthenticationWithSshKey": false,
+        "labSubnetName": "SN1",
+        "labVirtualNetworkId": "/subscriptions/bd627181-5ddb-4bb6-b03f-5297c3be4e1e/resourcegroups/student-rg-846011/providers/microsoft.devtestlab/labs/csn400-32/virtualnetworks/router-32",
+        "disallowPublicIpAddress": true,
+        "artifactDeploymentStatus": {
+            "artifactsApplied": 0,
+            "totalArtifacts": 0
+        },
+        "galleryImageReference": {
+            "offer": "RHEL",
+            "publisher": "RedHat",
+            "sku": "8.1",
+            "osType": "Linux",
+            "version": "latest"
+        },
+        "networkInterface": {},
+        "allowClaim": false,
+        "storageType": "Standard",
+        "virtualMachineCreationSource": "FromGalleryImage",
+        "lastKnownPowerState": "Running",
+        "provisioningState": "Succeeded",
+        "uniqueIdentifier": "c957dc91-9259-4c19-8805-26026c1a2ddb"
+    },
+    "location": "canadacentral",
+    "tags": {
+        "DeploymentId": "846011",
+        "LaunchId": "28959",
+        "LaunchType": "ON_DEMAND_LAB",
+        "TemplateId": "4678",
+        "TenantId": "353"
+    },
+    "id": "/subscriptions/bd627181-5ddb-4bb6-b03f-5297c3be4e1e/resourcegroups/student-rg-846011/providers/microsoft.devtestlab/labs/csn400-32/virtualmachines/lr-32",
+    "name": "LR-32",
+    "type": "Microsoft.DevTestLab/labs/virtualMachines"
+}

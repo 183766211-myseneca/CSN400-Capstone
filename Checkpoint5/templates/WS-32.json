@@ -1,0 +1,47 @@
+{
+    "properties": {
+        "notes": "Windows Server 2019 Datacenter",
+        "ownerObjectId": "7fa535ec-2afb-4ab5-8cd3-45608614a86b",
+        "ownerUserPrincipalName": "odl_user_846011@seneca-csn400naa.cloudlabs.ai",
+        "createdByUserId": "100320026C62CBCC",
+        "createdByUser": "odl_user_846011@seneca-csn400naa.cloudlabs.ai",
+        "createdDate": "2023-02-11T17:39:25.0508543+00:00",
+        "computeId": "/subscriptions/bd627181-5ddb-4bb6-b03f-5297c3be4e1e/resourceGroups/student-rg-846011/providers/Microsoft.Compute/virtualMachines/WS-32",
+        "osType": "Windows",
+        "size": "Standard_B2s",
+        "userName": "escheller",
+        "isAuthenticationWithSshKey": false,
+        "labSubnetName": "SN1",
+        "labVirtualNetworkId": "/subscriptions/bd627181-5ddb-4bb6-b03f-5297c3be4e1e/resourcegroups/student-rg-846011/providers/microsoft.devtestlab/labs/csn400-32/virtualnetworks/server-32",
+        "disallowPublicIpAddress": true,
+        "artifactDeploymentStatus": {
+            "artifactsApplied": 0,
+            "totalArtifacts": 0
+        },
+        "galleryImageReference": {
+            "offer": "WindowsServer",
+            "publisher": "MicrosoftWindowsServer",
+            "sku": "2019-Datacenter",
+            "osType": "Windows",
+            "version": "latest"
+        },
+        "networkInterface": {},
+        "allowClaim": false,
+        "storageType": "Standard",
+        "virtualMachineCreationSource": "FromGalleryImage",
+        "lastKnownPowerState": "Running",
+        "provisioningState": "Succeeded",
+        "uniqueIdentifier": "0cfd3d72-33ee-40a1-a56a-c9c9ca63dbac"
+    },
+    "location": "canadacentral",
+    "tags": {
+        "DeploymentId": "846011",
+        "LaunchId": "28959",
+        "LaunchType": "ON_DEMAND_LAB",
+        "TemplateId": "4678",
+        "TenantId": "353"
+    },
+    "id": "/subscriptions/bd627181-5ddb-4bb6-b03f-5297c3be4e1e/resourcegroups/student-rg-846011/providers/microsoft.devtestlab/labs/csn400-32/virtualmachines/ws-32",
+    "name": "WS-32",
+    "type": "Microsoft.DevTestLab/labs/virtualMachines"
+}
