@@ -182,17 +182,17 @@ Accumulated resource cost area chart, last 7 days.
      alt="DevTestAllowedImages"
      style="float: left; margin-right: 10px;" />
 
-Cost by service name, past 30 days.
+Cost by service name, past 30 days.<br>
 <img src="./images/service-name-piechart-02-12-23.jpg"
      alt="DevTestAllowedImages"
      style="float: left; margin-right: px;" />
 
-Cost by service family, past 30 days.
+Cost by service family, past 30 days.<br>
 <img src="./images/service-family-piechart-02-12-23.jpg"
      alt="DevTestAllowedImages"
      style="float: left; margin-right: px;" />
 
-Cost by product, past 30 days.
+Cost by product, past 30 days.<br>
 <img src="./images/product-piechart-02-12-23.jpg"
      alt="DevTestAllowedImages"
      style="float: left; margin-right: px;" />
