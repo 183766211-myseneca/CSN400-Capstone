@@ -166,5 +166,33 @@ Isolate `name` property in `devtest_lab.json`.
 ]
 ```
 ## Part D - Azure Cost Analysis Charts
-Submit the cost analysis screenshots as per instructions in your README.md. Make sure images are not blur and clearly show your `Student-RG-xxxxxx`. Also make sure each image has a caption to indicate what it captures. 
 
+Daily resource cost of last 7 days.
+<img src="./images/daily-cost-barchart-02-12-23.jpg"
+     alt="DevTestAllowedImages"
+     style="float: left; margin-right: 10px;" />
+
+Daily service cost of last 7 days.
+<img src="./images/daily-cost-service-barchart-02-12-23.jpg"
+     alt="DevTestAllowedImages"
+     style="float: left; margin-right: 10px;" />
+
+Accumulated resource cost area chart, last 7 days.
+<img src="./images/accumulated-resource-areachart-02-12-23.jpg"
+     alt="DevTestAllowedImages"
+     style="float: left; margin-right: 10px;" />
+
+Cost by service name, past 30 days.
+<img src="./images/service-name-piechart-02-12-23.jpg"
+     alt="DevTestAllowedImages"
+     style="float: left; margin-right: px;" />
+
+Cost by service family, past 30 days.
+<img src="./images/service-family-piechart-02-12-23.jpg"
+     alt="DevTestAllowedImages"
+     style="float: left; margin-right: px;" />
+
+Cost by product, past 30 days.
+<img src="./images/product-piechart-02-12-23.jpg"
+     alt="DevTestAllowedImages"
+     style="float: left; margin-right: px;" />
