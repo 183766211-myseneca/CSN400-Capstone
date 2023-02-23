@@ -159,3 +159,33 @@ Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
  ```
 
 ## Part E - Azure Cost Analysis Charts
+
+Daily resource cost of last 7 days.
+<img src="./images/daily-costs-barchart-02-23.jpg"
+     alt="DevTestAllowedImages"
+     style="float: left; margin-right: 10px;" />
+
+Daily service cost of last 7 days.
+<img src="./images/daily-costs-services-barchart-02-23.jpg"
+     alt="DevTestAllowedImages"
+     style="float: left; margin-right: 10px;" />
+
+Accumulated resource cost area chart, last 7 days.
+<img src="./images/accumulated-resource-barchart-02-23.jpg"
+     alt="DevTestAllowedImages"
+     style="float: left; margin-right: 10px;" />
+
+Cost by service name, past 30 days.<br>
+<img src="./images/service-name-piechart-02-23.jpg"
+     alt="DevTestAllowedImages"
+     style="float: left; margin-right: px;" />
+
+Cost by service family, past 30 days.<br>
+<img src="./images/service-family-piechart-02-23.jpg"
+     alt="DevTestAllowedImages"
+     style="float: left; margin-right: px;" />
+
+Cost by product, past 30 days.<br>
+<img src="./images/product-piechart-02-23.jpg"
+     alt="DevTestAllowedImages"
+     style="float: left; margin-right: px;" />
