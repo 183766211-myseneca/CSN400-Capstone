@@ -112,8 +112,50 @@ My command used is `az network nic show -g "Student-RG-846011" -n "lr-32" -o JSO
 ```
 The line `  "enableIpForwarding": true,` shows that IP forwarding is enabled.
 
-4. Part D - Basic Connectivity: Run a couple of rounds of `ssh` and `rdp` connections. Run `sudo iptables -nvL` and embed the output in your submission 
-5. You will need to re-create Custom Images after you have made the configurations in Part A, B, C, D and successfully established basic connectivity. 
+4. Part D - Basic Connectivity: Run a couple of rounds of `ssh` and `rdp` connections. Run `sudo iptables -nvL` and embed the output in your submission <br>
+`sudo iptables -nvL` on LR-32:<br>
+```
+Chain INPUT (policy ACCEPT 0 packets, 0 bytes)
+ pkts bytes target     prot opt in     out     source               destination
+ 7288 6892K ACCEPT     tcp  --  *      *       0.0.0.0/0            0.0.0.0/0            state RELATED,ESTABLISHED
+    7   588 ACCEPT     icmp --  *      *       0.0.0.0/0            0.0.0.0/0
+    6   360 ACCEPT     all  --  lo     *       0.0.0.0/0            0.0.0.0/0
+    7   364 ACCEPT     tcp  --  *      *       10.52.19.0/24        0.0.0.0/0            state NEW tcp dpt:22
+  121 22292 LOG        all  --  *      *       0.0.0.0/0            0.0.0.0/0            limit: avg 10/sec burst 5 LOG flags 0 level 4 prefix "TO_DROP_INPUT"
+  121 22292 DROP       all  --  *      *       0.0.0.0/0            0.0.0.0/0
+
+Chain FORWARD (policy ACCEPT 0 packets, 0 bytes)
+ pkts bytes target     prot opt in     out     source               destination
+  756 60434 ACCEPT     tcp  --  *      *       10.52.19.0/24        172.17.32.32/27      tcp dpt:22
+  542 76934 ACCEPT     tcp  --  *      *       172.17.32.32/27      10.52.19.0/24        tcp spt:22
+ 1116  117K ACCEPT     tcp  --  *      *       10.52.19.0/24        172.17.32.32/27      tcp dpt:3389
+ 1179  134K ACCEPT     tcp  --  *      *       172.17.32.32/27      10.52.19.0/24        tcp spt:3389
+   10  4200 LOG        all  --  *      *       0.0.0.0/0            0.0.0.0/0            limit: avg 10/sec burst 5 LOG flags 0 level 4 prefix "TO_DROP_FORWARD"
+   10  4200 DROP       all  --  *      *       0.0.0.0/0            0.0.0.0/0
+
+Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
+ pkts bytes target     prot opt in     out     source               destination
+ 9146 2332K ACCEPT     all  --  *      *       0.0.0.0/0            0.0.0.0/0
+ ```
+ `sudo iptables -nvL` on LS-32:
+```
+ pkts bytes target     prot opt in     out     source               destination
+ 5302 6505K ACCEPT     tcp  --  *      *       0.0.0.0/0            0.0.0.0/0            state RELATED,ESTABLISHED
+    7   588 ACCEPT     icmp --  *      *       0.0.0.0/0            0.0.0.0/0
+    6   360 ACCEPT     all  --  lo     *       0.0.0.0/0            0.0.0.0/0
+    6   360 ACCEPT     tcp  --  *      *       192.168.32.32/27     0.0.0.0/0            tcp dpt:22
+    6   312 ACCEPT     tcp  --  *      *       10.52.19.0/24        0.0.0.0/0            tcp dpt:22
+  120 21231 LOG        all  --  *      *       0.0.0.0/0            0.0.0.0/0            limit: avg 10/sec burst 5 LOG flags 0 level 4 prefix "TO_DROP_INPUT"
+  120 21231 DROP       all  --  *      *       0.0.0.0/0            0.0.0.0/0
+
+Chain FORWARD (policy ACCEPT 0 packets, 0 bytes)
+ pkts bytes target     prot opt in     out     source               destination
+    0     0 DROP       all  --  *      *       0.0.0.0/0            0.0.0.0/0
+
+Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
+ pkts bytes target     prot opt in     out     source               destination
+ 6737 1757K ACCEPT     all  --  *      *       0.0.0.0/0            0.0.0.0/0
+ ```
 6. Make sure to create new set of Custom Images from all your VMs even though only Linux machines are updated. Run a command in CLI that lists all your Custom Images in your DevTest Lab environment. Hint: `az lab custom-image list ...`
 7. Delete your VMs after your work is completed. Run a command in CLI that lists all your VMs in your DEvTEst Lab environment. Hint: `az lab vm list ...`
 8. Part E - Submit the cost analysis screenshots as per instructions in your README.md. Make sure images are not blur and clearly show your `Student-RG-xxxxxx`. Also make sure each image has a caption to indicate what it captures. 
