@@ -8,11 +8,12 @@
 
 ### Table of Contents
 
-3. [Part C - Enable ip-forwarding in NIC](#header4)
-4. [Part D - Basic Connectivity](#header3)
-5. [Part E - Azure Cost Analysis Charts](#header4)
+3. [Part C - Enable ip-forwarding in NIC](#part-c---enable-ip-forwarding-in-nic)
+4. [Part D - Basic Connectivity](#part-d---basic-connectivity)
+5. [Part E - Azure Cost Analysis Charts](#part-e---azure-cost-analysis-charts)
 
-3. Part C - Enable ip-forwarding in NIC: Which property shows the status of ip-forwarding attribute? Embed the output in `json` format in your `README.md` and highlight the property that shows status of ip-forwarding.<br> <br>The staus of ip-forwarding is held within this NIC, and the attribute name is `enableIpForwarding`, returning either True or False. The NIC attributes can be listed by the command `az network nic show -g MyResourceGroup -n MyNic`, and the specific attribute queried with `--query "enableIpForwarding"`.<br>
+## Part C - Enable ip-forwarding in NIC
+The status of ip-forwarding is held within this NIC, and the attribute name is `enableIpForwarding`, returning either True or False. The NIC attributes can be listed by the command `az network nic show -g MyResourceGroup -n MyNic`, and the specific attribute queried with `--query "enableIpForwarding"`.<br>
 My command used is `az network nic show -g "Student-RG-846011" -n "lr-32" -o JSON`.
 ```{
   "auxiliaryMode": null,
@@ -112,8 +113,8 @@ My command used is `az network nic show -g "Student-RG-846011" -n "lr-32" -o JSO
 ```
 The line `  "enableIpForwarding": true,` shows that IP forwarding is enabled.
 
-4. Part D - Basic Connectivity: Run a couple of rounds of `ssh` and `rdp` connections. Run `sudo iptables -nvL` and embed the output in your submission <br>
-`sudo iptables -nvL` on LR-32:<br>
+## Part D - Basic Connectivity
+`sudo iptables -nvL` on LR-32:
 ```
 Chain INPUT (policy ACCEPT 0 packets, 0 bytes)
  pkts bytes target     prot opt in     out     source               destination
@@ -156,6 +157,5 @@ Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
  pkts bytes target     prot opt in     out     source               destination
  6737 1757K ACCEPT     all  --  *      *       0.0.0.0/0            0.0.0.0/0
  ```
-6. Make sure to create new set of Custom Images from all your VMs even though only Linux machines are updated. Run a command in CLI that lists all your Custom Images in your DevTest Lab environment. Hint: `az lab custom-image list ...`
-7. Delete your VMs after your work is completed. Run a command in CLI that lists all your VMs in your DEvTEst Lab environment. Hint: `az lab vm list ...`
-8. Part E - Submit the cost analysis screenshots as per instructions in your README.md. Make sure images are not blur and clearly show your `Student-RG-xxxxxx`. Also make sure each image has a caption to indicate what it captures. 
+
+## Part E - Azure Cost Analysis Charts
