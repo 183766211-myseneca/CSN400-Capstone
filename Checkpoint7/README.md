@@ -122,11 +122,18 @@ Mar 24 03:42:29 LR-32 kernel: FTP CONTROL PLANE FORWARD TO IN=eth0 OUT=eth0 MAC=
 | 35992 | Mar 24 | 60:45:bd:5d:50:52:c0:d6:82:62:ec:09:08:00 | Protocol | 10.52.19.4 | 172.17.32.36 | 53634 | 21 | 40 | FTP CONTROL PLANE FORWARD TO | 127 |
 
 
-1. What is Packet ID? Does it follow a sequence or is it random? How can you prove / demonstrate your answer?
-2. Why Windows Client Source Port is not related to the kind of service requested? Why for example SSH request is coming from a random Source Port instead of port 22? Is there any way you can fix request port number? If yes give example, if no elaborate?
-3. Answer previous question for DNS service? Can you explain the random Source Port issue?
-4. What is MAC address? Can you find the MAC addresses of your Network
-Interface Cards in Azure Portal? How?
+1. What is Packet ID? Does it follow a sequence or is it random? How can you prove / demonstrate your answer?<br>
+The Packet ID is a unique identifier for each packet. It is given sequentially. This could be seen by checking the logs in /var/log/messages.
+
+2. Why Windows Client Source Port is not related to the kind of service requested? Why for example SSH request is coming from a random Source Port instead of port 22? Is there any way you can fix request port number? If yes give example, if no elaborate? <br>
+The Client's source port is not relevant for the type of traffic being sent as long as it is sent to the destination port of the listening device. The client will choose any port number that is not pre-assigned. It is possible to alter the pool of ports to choose from in the TCP implementation software, though it is not recommended
+
+3. Answer previous question for DNS service? Can you explain the random Source Port issue? <br>
+The same can be said when referring to a client using a DNS service. The client would pick any source port that it finds to be available.
+
+4. What is MAC address? Can you find the MAC addresses of your Network Interface Cards in Azure Portal? How? <br>
+MAC address is a globally unique identifier for a piece of hardware (or virtual hardware). The MAC address of the NIC on Azure is found in the properties tab.
+
 
 ## Part D - Azure Cost Analysis Charts
 
