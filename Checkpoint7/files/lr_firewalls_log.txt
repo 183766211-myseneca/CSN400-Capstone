@@ -1,0 +1,56 @@
+Chain INPUT (policy ACCEPT 6 packets, 240 bytes)
+num   pkts bytes target     prot opt in     out     source               destination
+1     2290  150K LOG        tcp  --  *      *       10.52.19.0/24        192.168.32.36        tcp dpt:22 limit: avg 10/sec burst 5 LOG flags 0 level 4 prefix "SSH INPUT LR-32 - "
+2        6   312 LOG        tcp  --  *      *       10.52.19.0/24        0.0.0.0/0            state NEW tcp dpt:22 limit: avg 10/sec burst 5 LOG flags 0 level 4 prefix "SSH NEW TO LR-32 - "
+3     9937 1853K ACCEPT     tcp  --  *      *       0.0.0.0/0            0.0.0.0/0            state RELATED,ESTABLISHED
+4        0     0 ACCEPT     icmp --  *      *       0.0.0.0/0            0.0.0.0/0
+5        0     0 ACCEPT     all  --  lo     *       0.0.0.0/0            0.0.0.0/0
+6        6   312 ACCEPT     tcp  --  *      *       10.52.19.0/24        0.0.0.0/0            state NEW tcp dpt:22
+7        6   432 LOG        all  --  *      *       0.0.0.0/0            0.0.0.0/0            limit: avg 10/sec burst 5 LOG flags 0 level 4 prefix "TO_DROP_INPUT"
+8        6   432 DROP       all  --  *      *       0.0.0.0/0            0.0.0.0/0
+
+Chain FORWARD (policy ACCEPT 1 packets, 91 bytes)
+num   pkts bytes target     prot opt in     out     source               destination
+1       21  3861 LOG        tcp  --  *      *       10.52.19.0/24        172.17.32.37         tcp dpt:22 limit: avg 10/sec burst 5 LOG flags 0 level 4 prefix "SSH FORWARD TO LS-32 - "
+2       19  2985 LOG        tcp  --  *      *       172.17.32.37         10.52.19.0/24        tcp spt:22 limit: avg 10/sec burst 5 LOG flags 0 level 4 prefix "SSH FORWARD FROM LS-32 - "
+3       28  4517 ACCEPT     tcp  --  *      *       10.52.19.0/24        172.17.32.32/27      tcp dpt:22
+4       27  4701 ACCEPT     tcp  --  *      *       172.17.32.32/27      10.52.19.0/24        tcp spt:22
+5      747 33403 LOG        tcp  --  *      *       10.52.19.0/24        172.17.32.36         tcp dpt:3389 limit: avg 10/sec burst 5 LOG flags 0 level 4 prefix "RDP FORWARD TO WS-32 - "
+6      757 72212 LOG        tcp  --  *      *       172.17.32.36         10.52.19.0/24        tcp spt:3389 limit: avg 10/sec burst 5 LOG flags 0 level 4 prefix "RDP FORWARD FROM WS-32 - "
+7      903 47517 ACCEPT     tcp  --  *      *       10.52.19.0/24        172.17.32.32/27      tcp dpt:3389
+8      930  172K ACCEPT     tcp  --  *      *       172.17.32.32/27      10.52.19.0/24        tcp spt:3389
+9        0     0 LOG        tcp  --  *      *       0.0.0.0/0            172.17.32.36         tcp dpt:53 limit: avg 10/sec burst 5 LOG flags 0 level 4 prefix "DNS TCP FORWARD TO WS-32 - "
+10       0     0 LOG        tcp  --  *      *       172.17.32.36         0.0.0.0/0            tcp spt:53 limit: avg 10/sec burst 5 LOG flags 0 level 4 prefix "DNS TCP FORWARD FROM WS-32 - "
+11      36  2469 LOG        udp  --  *      *       0.0.0.0/0            172.17.32.36         udp dpt:53 limit: avg 10/sec burst 5 LOG flags 0 level 4 prefix "DNS UDP FORWARD TO WS-32 - "
+12      33  5397 LOG        udp  --  *      *       172.17.32.36         0.0.0.0/0            udp spt:53 limit: avg 10/sec burst 5 LOG flags 0 level 4 prefix "DNS UDP FORWARD FROM WS-32 - "
+13       0     0 ACCEPT     tcp  --  *      *       0.0.0.0/0            172.17.32.36         tcp dpt:53
+14       0     0 ACCEPT     tcp  --  *      *       172.17.32.36         0.0.0.0/0            tcp spt:53
+15      36  2469 ACCEPT     udp  --  *      *       0.0.0.0/0            172.17.32.36         udp dpt:53
+16      33  5397 ACCEPT     udp  --  *      *       172.17.32.36         0.0.0.0/0            udp spt:53
+17       5   352 LOG        tcp  --  *      *       10.52.19.0/24        172.17.32.37         tcp dpt:3306 limit: avg 10/sec burst 5 LOG flags 0 level 4 prefix "MySQL FORWARD TO LS-32 - "
+18       5   724 LOG        tcp  --  *      *       172.17.32.37         10.52.19.0/24        tcp spt:3306 limit: avg 10/sec burst 5 LOG flags 0 level 4 prefix "MySQL FORWARD FROM LS-32 - "
+19       8   477 ACCEPT     tcp  --  *      *       10.52.19.0/24        172.17.32.37         tcp dpt:3306
+20       8   914 ACCEPT     tcp  --  *      *       172.17.32.37         10.52.19.0/24        tcp spt:3306
+21      10   922 LOG        tcp  --  *      *       10.52.19.0/24        172.17.32.37         tcp dpt:80 limit: avg 10/sec burst 5 LOG flags 0 level 4 prefix "HTTP FORWARD TO LS-32 - "
+22      11  1694 LOG        tcp  --  *      *       172.17.32.37         10.52.19.0/24        tcp spt:80 limit: avg 10/sec burst 5 LOG flags 0 level 4 prefix "HTTP FORWARD FROM LS-32 - "
+23      11  1396 ACCEPT     tcp  --  *      *       10.52.19.0/24        172.17.32.37         tcp dpt:80
+24      11  1694 ACCEPT     tcp  --  *      *       172.17.32.37         10.52.19.0/24        tcp spt:80
+25       9   873 LOG        tcp  --  *      *       10.52.19.0/24        172.17.32.36         tcp dpt:80 limit: avg 10/sec burst 5 LOG flags 0 level 4 prefix "HTTP FORWARD TO WS-32 - "
+26      10  2781 LOG        tcp  --  *      *       172.17.32.36         10.52.19.0/24        tcp spt:80 limit: avg 10/sec burst 5 LOG flags 0 level 4 prefix "HTTP FORWARD FROM WS-32 - "
+27      11  1387 ACCEPT     tcp  --  *      *       10.52.19.0/24        172.17.32.36         tcp dpt:80
+28      10  2781 ACCEPT     tcp  --  *      *       172.17.32.36         10.52.19.0/24        tcp spt:80
+29      12   579 LOG        tcp  --  *      *       10.52.19.0/24        172.17.32.36         tcp dpt:21 limit: avg 10/sec burst 5 LOG flags 0 level 4 prefix "FTP CONTROL PLANE FORWARD TO "
+30      12   771 LOG        tcp  --  *      *       172.17.32.36         10.52.19.0/24        tcp spt:21 limit: avg 10/sec burst 5 LOG flags 0 level 4 prefix "FTP CONTROL PLANE FORWARD FRO"
+31      19   919 ACCEPT     tcp  --  *      *       10.52.19.0/24        172.17.32.36         tcp dpt:21
+32      19  1304 ACCEPT     tcp  --  *      *       172.17.32.36         10.52.19.0/24        tcp spt:21
+33       5  3239 LOG        tcp  --  *      *       10.52.19.0/24        172.17.32.36         tcp dpts:50000:51000 limit: avg 10/sec burst 5 LOG flags 0 level 4 prefix "FTP DATA PLANE FORWARD TO WS-"
+34       5   496 LOG        tcp  --  *      *       172.17.32.36         10.52.19.0/24        tcp spts:50000:51000 limit: avg 10/sec burst 5 LOG flags 0 level 4 prefix "FTP DATA PLANE FORWARD FROM W"
+35       9  3411 ACCEPT     tcp  --  *      *       10.52.19.0/24        172.17.32.36         tcp dpts:50000:51000
+36       7   576 ACCEPT     tcp  --  *      *       172.17.32.36         10.52.19.0/24        tcp spts:50000:51000
+37       0     0 LOG        all  --  *      *       0.0.0.0/0            0.0.0.0/0            limit: avg 10/sec burst 5 LOG flags 0 level 4 prefix "TO_DROP_FORWARD"
+38       0     0 DROP       all  --  *      *       0.0.0.0/0            0.0.0.0/0
+
+Chain OUTPUT (policy ACCEPT 129 packets, 17804 bytes)
+num   pkts bytes target     prot opt in     out     source               destination
+1     1207  194K LOG        tcp  --  *      *       192.168.32.36        10.52.19.0/24        tcp spt:22 limit: avg 10/sec burst 5 LOG flags 0 level 4 prefix "SSH OUTPUT WC-32"
+2    11539 3193K ACCEPT     all  --  *      *       0.0.0.0/0            0.0.0.0/0
