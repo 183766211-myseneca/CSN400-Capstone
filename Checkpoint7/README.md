@@ -109,40 +109,53 @@ Mar 24 03:42:29 LR-32 kernel: FTP CONTROL PLANE FORWARD TO IN=eth0 OUT=eth0 MAC=
  ```
 
 ## Part C - Analyzing Logged Packets
- Add a header and include the table of your packet details in this section. Also answer the questions as per your table content. Use good formatting for your Markdown so you would not lose marks.
+ 
+| Packet ID | Date | MAC Address | Protocol | Source Address | Dest. Address | Source Port | Dest. Port | Packet Length | LOG Prefix | Time To Live |
+| - | - | - | - | - | - | - | - | - | - | - |
+| 49621 | Mar 24 | 60:45:bd:5d:50:52:c0:d6:82:62:ec:09:08:00 | TCP | 10.52.19.4 | 192.168.32.36 | 53283 | 22 | 52 | SSH NEW TO LR-32 | 128 |
+| 25640 | Mar 24 | - | TCP | 192.168.32.36 | 10.52.19.4 | 22 | 52938 | 84 | SSH OUTPUT WC-32 | 64 |
+| 59646 | Mar 24 | 60:45:bd:5d:50:52:c0:d6:82:62:ec:09:08:00 | UDP | 172.17.32.36 | 10.52.19.4 | 53 | 60866 | 62 | DNS UDP FORWARD FROM WS-32 | 127 |
+| 35932 | Mar 24 | 60:45:bd:5d:50:52:c0:d6:82:62:ec:09:08:00 | TCP | 10.52.19.4 | 172.17.32.36 | 53491 | 80 | 52 | HTTP FORWARD TO WS-32 | 127 |
+| 59697 | Mar 24 | 60:45:bd:5d:50:52:c0:d6:82:62:ec:09:08:00 | UDP | 172.17.32.36 | 10.52.19.4 | 53 | 64692 | 201 | DNS UDP FORWARD FROM WS-32 | 127 |
+| 9593 | Mar 24 | 60:45:bd:5d:50:52:c0:d6:82:62:ec:09:08:00 | TCP | 10.52.19.4 | 172.17.32.37 | 53581 | 80 | 40 | HTTP FORWARD TO LS-32 | 127 |
+| 9606 | Mar 24 | 60:45:bd:5d:50:52:c0:d6:82:62:ec:09:08:00 | Protocol | 10.52.19.4 | 172.17.32.37 | 53614 | 3306 | 45 | MySQL FORWARD TO LS-32 | 127 |
+| 35992 | Mar 24 | 60:45:bd:5d:50:52:c0:d6:82:62:ec:09:08:00 | Protocol | 10.52.19.4 | 172.17.32.36 | 53634 | 21 | 40 | FTP CONTROL PLANE FORWARD TO | 127 |
 
-| Name | ID |
-| - | - |
-| Evan | 99 |
+
+1. What is Packet ID? Does it follow a sequence or is it random? How can you prove / demonstrate your answer?
+2. Why Windows Client Source Port is not related to the kind of service requested? Why for example SSH request is coming from a random Source Port instead of port 22? Is there any way you can fix request port number? If yes give example, if no elaborate?
+3. Answer previous question for DNS service? Can you explain the random Source Port issue?
+4. What is MAC address? Can you find the MAC addresses of your Network
+Interface Cards in Azure Portal? How?
 
 ## Part D - Azure Cost Analysis Charts
 
-Daily resource cost of last 7 days.
+### Daily resource cost of last 7 days.
 <img src="./images/daily-costs-barchart-03-23.jpg"
      alt="chart1"
      style="float: left; margin-right: 10px;" />
 
-Daily service cost of last 7 days.
+### Daily service cost of last 7 days.
 <img src="./images/daily-costs-services-barchart-03-23.jpg"
      alt="chart2"
      style="float: left; margin-right: 10px;" />
 
-Accumulated resource cost area chart, last 7 days.
+### Accumulated resource cost area chart, last 7 days.
 <img src="./images/accumulated-resource-barchart-03-23.jpg"
      alt="chart3"
      style="float: left; margin-right: 10px;" />
 
-Cost by service name, past 30 days.<br>
+### Cost by service name, past 30 days.
 <img src="./images/service-name-piechart-03-23.jpg"
      alt="chart4"
      style="float: left; margin-right: px;" />
 
-Cost by service family, past 30 days.<br>
+### Cost by service family, past 30 days.
 <img src="./images/service-family-piechart-03-23.jpg"
      alt="chart5"
      style="float: left; margin-right: px;" />
 
-Cost by product, past 30 days.<br>
+### Cost by product, past 30 days.
 <img src="./images/product-piechart-03-23.jpg"
      alt="chart6"
      style="float: left; margin-right: px;" />
