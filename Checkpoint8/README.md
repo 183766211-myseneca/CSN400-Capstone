@@ -8,22 +8,24 @@
 
 ### Table of Contents
 
-1. [Part A – Logging and Analyzing DNS and HTTP Traffic](#part-a---logging-and-analyzing-dns-and-http-traffic)
-2. [Part B – Logging and Analyzing FTP and MySQL Traffic](#part-b---logging-and-analyzing-ftp-and-mysql-traffic)
-3. [Part C – Adjusting firewalls to DROP and LOG Traffic](#part-c---adjusting-firewalls-to-drop-and-log-traffic)
+1. [Part A - Logging and Analyzing DNS and HTTP Traffic](#part-a---logging-and-analyzing-dns-and-http-traffic)
+2. [Part B - Logging and Analyzing FTP and MySQL Traffic](#part-b---logging-and-analyzing-ftp-and-mysql-traffic)
+3. [Part C - Adjusting firewalls to DROP and LOG Traffic](#part-c---adjusting-firewalls-to-drop-and-log-traffic)
 4. [Part D - Azure Cost Analysis Charts](#part-d---azure-cost-analysis-charts)
 
-## Part A – Logging and Analyzing DNS and HTTP Traffic
+## Part A - Logging and Analyzing DNS and HTTP Traffic
 Apache and IIS filtered packets.
 <img src="./images/apache-iis-filtered-ss.jpg"
      alt="apache-iis-filtered"
      style="float: left; margin-right: 10px;" />
-## Part B – Logging and Analyzing FTP and MySQL Traffic
+
+## Part B - Logging and Analyzing FTP and MySQL Traffic
 FTP and MySQL filtered packets.
 <img src="./images/ftp-mysql-filtered-ss.jpg"
      alt="ftp-mysql-filtered"
      style="float: left; margin-right: 10px;" />
-## Part C – Adjusting firewalls to DROP and LOG Traffic
+
+## Part C - Adjusting firewalls to DROP and LOG Traffic
 New firewall rules for dropping specified packets.
 ```
 iptables -A FORWARD -p tcp -d 10.52.19.0/24 -s 172.17.32.37 --sport 22 -j DROP 
@@ -45,3 +47,33 @@ SSH and FTP attempts filtered packets - lr-drop-log-filtered.
      style="float: left; margin-right: 10px;" />
 
 ## Part D - Azure Cost Analysis Charts
+
+### Daily resource cost of last 7 days.
+<img src="./images/daily-costs-barchart-03-30.jpg"
+     alt="chart1"
+     style="float: left; margin-right: 10px;" />
+
+### Daily service cost of last 7 days.
+<img src="./images/daily-costs-services-barchart-03-30.jpg"
+     alt="chart2"
+     style="float: left; margin-right: 10px;" />
+
+### Accumulated resource cost area chart, last 7 days.
+<img src="./images/accumulated-resource-barchart-03-30.jpg"
+     alt="chart3"
+     style="float: left; margin-right: 10px;" />
+
+### Cost by service name, past 30 days.
+<img src="./images/service-name-piechart-03-30.jpg"
+     alt="chart4"
+     style="float: left; margin-right: px;" />
+
+### Cost by service family, past 30 days.
+<img src="./images/service-family-piechart-03-30.jpg"
+     alt="chart5"
+     style="float: left; margin-right: px;" />
+
+### Cost by product, past 30 days.
+<img src="./images/product-piechart-03-30.jpg"
+     alt="chart6"
+     style="float: left; margin-right: px;" />
