@@ -29,4 +29,19 @@ New firewall rules for dropping specified packets.
 iptables -A FORWARD -p tcp -d 10.52.19.0/24 -s 172.17.32.37 --sport 22 -j DROP 
 iptables -A FORWARD -p tcp -s 10.52.19.0/24 -d 172.17.32.36 --dport 21 -j DROP
 ```
+SSH and FTP attempts filtered packets - lr-nondrop-log-filtered.
+<img src="./images/lr-nondrop-log-filtered-ss.jpg"
+     alt="lr-nondrop-log-filtered"
+     style="float: left; margin-right: 10px;" />
+
+Snippet of log messages for dropped packets.
+```
+Mar 29 23:33:41 LR-32 kernel: FTP CONTROL PLANE FORWARD TO IN=eth0 OUT=eth0 MAC=00:22:48:ae:1d:1c:fc:bd:67:90:0d:eb:08:00 SRC=10.52.19.4 DST=172.17.32.36 LEN=52 TOS=0x00 PREC=0x00 TTL=127 ID=60087 DF PROTO=TCP SPT=54386 DPT=21 WINDOW=64240 RES=0x00 SYN URGP=0
+Mar 29 23:33:31 LR-32 kernel: SSH FORWARD TO LS-32 - IN=eth0 OUT=eth0 MAC=00:22:48:ae:1d:1c:fc:bd:67:90:0d:eb:08:00 SRC=10.52.19.4 DST=172.17.32.37 LEN=52 TOS=0x00 PREC=0x00 TTL=127 ID=59889 DF PROTO=TCP SPT=54384 DPT=22 WINDOW=64240 RES=0x00 SYN URGP=0
+```
+SSH and FTP attempts filtered packets - lr-drop-log-filtered.
+<img src="./images/lr-drop-log-filtered-ss.jpg"
+     alt="lr-drop-log-filtered"
+     style="float: left; margin-right: 10px;" />
+
 ## Part D - Azure Cost Analysis Charts
