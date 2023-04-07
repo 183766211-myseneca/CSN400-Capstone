@@ -90,6 +90,20 @@ iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
 
 
 ## Part C - Logging and Isolating Masqueraded Packets
+### masqueraded-logged.log:
+```
+Apr  5 01:52:44 LR-32 kernel: log-captures-masquerading-httIN=eth0 OUT=eth0 MAC=00:22:48:3d:96:23:d4:af:f7:6f:99:68:08:00 SRC=192.168.39.36 DST=172.17.32.36 LEN=41 TOS=0x00 PREC=0x00 TTL=125 ID=2091 DF PROTO=TCP SPT=61870 DPT=80 WINDOW=2052 RES=0x00 ACK URGP=0
+Apr  5 01:52:15 LR-32 kernel: log-captures-masquerading-httIN=eth0 OUT=eth0 MAC=00:22:48:3d:96:23:d4:af:f7:6f:99:68:08:00 SRC=192.168.39.36 DST=172.17.32.37 LEN=40 TOS=0x00 PREC=0x00 TTL=125 ID=2089 DF PROTO=TCP SPT=61882 DPT=80 WINDOW=2052 RES=0x00 ACK URGP=0
+Apr  5 01:49:28 LR-32 kernel: log-captures-masquerading-mysIN=eth0 OUT=eth0 MAC=00:22:48:3d:96:23:d4:af:f7:6f:99:68:08:00 SRC=192.168.39.36 DST=172.17.32.37 LEN=40 TOS=0x00 PREC=0x00 TTL=125 ID=2044 DF PROTO=TCP SPT=61815 DPT=3306 WINDOW=2052 RES=0x00 ACK FIN URGP=0
+Apr  5 01:50:34 LR-32 kernel: log-captures-masquerading-rdpIN=eth0 OUT=eth0 MAC=00:22:48:3d:96:23:d4:af:f7:6f:99:68:08:00 SRC=192.168.39.36 DST=172.17.32.36 LEN=40 TOS=0x00 PREC=0x00 TTL=125 ID=2067 DF PROTO=TCP SPT=61834 DPT=3389 WINDOW=0 RES=0x00 ACK RST URGP=0
+Apr  5 01:48:33 LR-32 kernel: log-captures-masquerading-sshIN=eth0 OUT=eth0 MAC=00:22:48:3d:96:23:d4:af:f7:6f:99:68:08:00 SRC=192.168.39.36 DST=172.17.32.37 LEN=104 TOS=0x00 PREC=0x00 TTL=62 ID=41332 DF PROTO=TCP SPT=44432 DPT=22 WINDOW=268 RES=0x00 ACK PSH URGP=0
+```
+### Masqueraded-capture.pcap screenshot
+<img src="./images/masqueraded-capture.jpg"
+     alt="masqueraded-capture"
+     style="float: left; margin-right: 10px;" />
+
+
 
 ## Part D - Azure Cost Analysis Charts
 
